@@ -1,0 +1,99 @@
+﻿;IDX;;COLUMN_NAME;;;DESCRIPTION;;;;|;;;DATA_TYPE;|;IS_NULLABLE
+**;1;.;id_terraza;**;:  ;código que identifica la terraza;;;;|;;;CHARACTER VARYING;|;YES
+**;2;.;id_local;**;:  ;"Código numérico que identifica cada local. Además cada local queda
+identificado por el código del NDP del edificio al que pertenece más
+el secuencial de local si es un puerta de calle o por el código de la
+agrupación mas la planta y el local si es un local agrupado.";;;;|;;;CHARACTER VARYING;|;YES
+**;3;.;id_distrito_local;**;:  ;Código numérico con el distrito municipal ;;;;|;;;CHARACTER VARYING;|;YES
+**;4;.;desc_distrito_local;**;:  ;Literal del distrito municipal ;;;;|;;;CHARACTER VARYING;|;YES
+**;5;.;id_barrio_local;**;:  ;"Código numérico con del barrio municipal (incluye el código de
+distrito)";;;;|;;;CHARACTER VARYING;|;YES
+**;6;.;desc_barrio_local;**;:  ;Literal del barrio municipal ;;;;|;;;CHARACTER VARYING;|;YES
+**;7;.;id_ndp_edificio;**;:  ;"Código numérico que identifica la dirección principal del edificio en el
+que se ubica el local (tipo de vía, nombre de vía, nominal, número y
+calificador). Por ejemplo “C/Goya num 24” tiene asociado el código
+de NDP “11014430”. ";;;;|;;;CHARACTER VARYING;|;YES
+**;8;.;id_clase_ndp_edificio;**;:  ;"Código numérico que identifica el tipo de dirección: “1” si es
+una dirección normalizada (oficial) y “9” si es una dirección no
+normalizada. Para los tipos de acceso mostrados no debe de
+aparecer ningún clase “9”.";;;;|;;;CHARACTER VARYING;|;YES
+**;9;.;id_vial_edificio;**;:  ;"Código numérico que identifica la clase más el nombre de via del
+edificio ";;;;|;;;CHARACTER VARYING;|;YES
+**;10;.;clase_vial_edificio;**;:  ;Recoge si se trata de Calle, Avenida, Plaza… ;;;;|;;;CHARACTER VARYING;|;YES
+**;11;.;desc_vial_edificio;**;:  ;Nombre de la vía según el callejero oficial ;;;;|;;;CHARACTER VARYING;|;YES
+**;12;.;nom_edificio;**;:  ;Tipo de numeración (Número, Kilómetro, bloque…);;;;|;;;CHARACTER VARYING;|;YES
+**;13;.;num_edificio;**;:  ;Número de la calle;;;;|;;;CHARACTER VARYING;|;YES
+**;14;.;Cod_Postal;**;:  ;Código postal;;;;|;;;CHARACTER VARYING;|;YES
+**;15;.;coordenada_x_local;**;:  ;"Coordenadas UTM que identifican, de forma aproximada, la
+entrada principal al local puerta de calle (Sistema de referencia:
+Hasta el 15 de septiembre de 2017 ED-50, a partir de esa fecha
+ETRS89). Sólo disponen de esta información los locales tipo de
+acceso “Puerta de Calle” que no estén en situación de “Baja”,
+los agrupados tienen información de las coordenadas de la
+agrupación (ver campos coordenadas_x/y_agrupación y los
+interiores no disponen de coordenadas) ";;;;|;;;CHARACTER VARYING;|;YES
+**;16;.;coordenada_y_local;**;:  ;"Coordenadas UTM que identifican, de forma aproximada, la
+entrada principal al local puerta de calle (Sistema de referencia:
+Hasta el 15 de septiembre de 2017 ED-50, a partir de esa fecha
+ETRS89). Sólo disponen de esta información los locales tipo de
+acceso “Puerta de Calle” que no estén en situación de “Baja”,
+los agrupados tienen información de las coordenadas de la
+agrupación (ver campos coordenadas_x/y_agrupación y los
+interiores no disponen de coordenadas) ";;;;|;;;CHARACTER VARYING;|;YES
+**;17;.;id_tipo_acceso_local;**;:  ;Código numérico que identifica el tipo de acceso (ver tabla “Tipo acceso”);;;;|;;;CHARACTER VARYING;|;YES
+**;18;.;desc_tipo_acceso_local;**;:  ;Tipos de local según su acceso (ver tabla “Tipo acceso”) ;;;;|;;;CHARACTER VARYING;|;YES
+**;19;.;id_situacion_local;**;:  ;"Código numérico que identifica la situación de un local (ver
+tabla “Situación”) ";;;;|;;;CHARACTER VARYING;|;YES
+**;20;.;desc_situacion_local;**;:  ;Tipos de situación de un local (ver tabla “Situación”) ;;;;|;;;CHARACTER VARYING;|;YES
+**;21;.;secuencial_local_PC;**;:  ;"Número secuencial que comienza en 10 en cada edificio y se
+asigna en saltos decenales. Identifica cada local puerta de calle
+de cada edificio y la asignación se realiza empezando por el
+primer local de la izquierda situado en la fachada del edificio
+donde está el portal principal, recorriendo el edificio completo en
+sentido contrario a las agujas del reloj. Este número junto con el
+código de ndp constituye el código identificativo de local.";;;;|;;;CHARACTER VARYING;|;YES
+**;22;.;Escalera;**;:  ;Información de la escalera del edificio que sólo aparecerá rellena, en caso de que exista, para locales con tipo de acceso “Interior”;;;;|;;;CHARACTER VARYING;|;YES
+**;23;.;id_planta_agrupado;**;:  ;Información relativa a la planta que sólo aparecerá rellena para los locales con tipo de acceso “Agrupado” o “Interior”;;;;|;;;CHARACTER VARYING;|;YES
+**;24;.;id_local_agrupado;**;:  ;Información relativa a la puerta que sólo aparecerá rellena para los locales con tipo de acceso “Agrupado” o “Interior” (en el caso de interiores esta información se corresponde con la “puerta”);;;;|;;;CHARACTER VARYING;|;YES
+**;25;.;coordenada_x_agrupacion;**;:  ;Coordenadas UTM que identifican, de forma aproximada, la entrada principal a la agrupación;;;;|;;;CHARACTER VARYING;|;YES
+**;26;.;coordenada_y_agrupacion;**;:  ;Coordenadas UTM que identifican, de forma aproximada, la entrada principal a la agrupación;;;;|;;;CHARACTER VARYING;|;YES
+**;27;.;rotulo;**;:  ;Nombre comercial del establecimiento;;;;|;;;CHARACTER VARYING;|;YES
+**;28;.;id_periodo_terraza;**;:  ;"Informa acerca del periodo de funcionamiento de la terraza; puede ser ‘1’ Anual y ‘2’ Estacional";;;;|;;;CHARACTER VARYING;|;YES
+**;29;.;desc_periodo_terraza;**;:  ;Literal asociado al valor del campo anterior: ‘Anual’ y ‘Estacional’;;;;|;;;CHARACTER VARYING;|;YES
+**;30;.;id_situacion_terraza;**;:  ;Informa de si la terraza consta en Censo de Locales como ‘1’ (abierta) o “8” “Suspensión temporal”;;;;|;;;CHARACTER VARYING;|;YES
+**;31;.;desc_situacion_terraza;**;:  ;Informa de si la terraza consta en Censo de Locales como ‘Abierta’ o como “Suspensión temporal”;;;;|;;;CHARACTER VARYING;|;YES
+**;32;.;Superficie_ES;**;:  ;superficie en metros cuadrados ocupada por la terraza en periodo ‘estacional’ (Nota: La ordenanza contempla que las terrazas anuales tengan diferentes superficies de ocupación durante el periodo estacional respecto al resto del año);;;;|;;;CHARACTER VARYING;|;YES
+**;33;.;Superficie_RA;**;:  ;superficie en metros cuadrados ocupada por la terraza en periodo ‘resto del año’;;;;|;;;CHARACTER VARYING;|;YES
+**;34;.;Fecha_confir_ult_decreto_resol;**;:  ;"Fecha en la que se confirma el decreto de resolución
+del expediente correspondiente (Renovación, Cambio
+de titularidad, modificación…). El formato de la fecha
+es dd/mm/aaaa. ";;;;|;;;CHARACTER VARYING;|;YES
+**;35;.;id_ndp_terraza;**;:  ;"Código numérico que identifica la dirección más cercana a la
+ubicación real de la terraza (tipo de vía, nombre de vía, nominal,
+número y calificador). ";;;;|;;;CHARACTER VARYING;|;YES
+**;36;.;id_clase_ndp_terraza;**;:  ;"Código numérico que identifica el tipo de dirección: “1” si es
+una dirección normalizada (oficial) y “9” si es una dirección no
+normalizada. Para los tipos de acceso mostrados no debe de
+aparecer ningún clase “9”. ";;;;|;;;CHARACTER VARYING;|;YES
+**;37;.;ID_VIAL;**;:  ;Código numérico que identifica la clase más el nombre de via del edificio;;;;|;;;CHARACTER VARYING;|;YES
+**;38;.;DESC_CLASE;**;:  ;Recoge si se trata de Calle, Avenida, Plaza…;;;;|;;;CHARACTER VARYING;|;YES
+**;39;.;DESC_NOMBRE;**;:  ;Nombre de la vía según el callejero oficial;;;;|;;;CHARACTER VARYING;|;YES
+**;40;.;nom_terraza;**;:  ;Nombre de la terraza;;;;|;;;CHARACTER VARYING;|;YES
+**;41;.;num_terraza;**;:  ;Numero de la terraza;;;;|;;;CHARACTER VARYING;|;YES
+**;42;.;cal_terraza;**;:  ;"Calificador del número (A,B,…,DUP,). No tiene por qué existir
+siempre";;;;|;;;CHARACTER VARYING;|;YES
+**;43;.;desc_ubicacion_terraza;**;:  ;Recoge la ubicación de la terraza en función de que se situe en: Acera, Plaza peatonal, superficie en parcela privada, Bulevar, Calle peatonal, calle sin salida, plaza con bandas permanentes de circulación rodada y otros;;;;|;;;CHARACTER VARYING;|;YES
+**;44;.;hora_ini_LJ_es;**;:  ;Horario inicio de domingo a jueves periodo estacional;;;;|;;;CHARACTER VARYING;|;YES
+**;45;.;hora_fin_LJ_es;**;:  ;Horario fin de domingo a jueves periodo estacional;;;;|;;;CHARACTER VARYING;|;YES
+**;46;.;hora_ini_LJ_ra;**;:  ;Horario inicio de domingo a jueves resto del año;;;;|;;;CHARACTER VARYING;|;YES
+**;47;.;hora_fin_LJ_ra;**;:  ;Horario fin de domingo a jueves resto del año;;;;|;;;CHARACTER VARYING;|;YES
+**;48;.;hora_ini_VS_es;**;:  ;Horario inicio de viernes, sábados y vísperas de festivo periodo estacional;;;;|;;;CHARACTER VARYING;|;YES
+**;49;.;hora_fin_VS_es;**;:  ;Horario fin de viernes, sábados y vísperas de festivo periodo estacional;;;;|;;;CHARACTER VARYING;|;YES
+**;50;.;hora_ini_VS_ra;**;:  ;Horario inicio de viernes, sábados y vísperas de festivo resto del año;;;;|;;;CHARACTER VARYING;|;YES
+**;51;.;hora_fin_VS_ra;**;:  ;Horario fin de viernes, sábados y vísperas de festivo resto del año;;;;|;;;CHARACTER VARYING;|;YES
+**;52;.;mesas_aux_es;**;:  ;nº de mesas auxiliares autorizadas en periodo estacional;;;;|;;;CHARACTER VARYING;|;YES
+**;53;.;mesas_aux_ra;**;:  ;nº de mesas auxiliares autorizadas resto del año;;;;|;;;CHARACTER VARYING;|;YES
+**;54;.;mesas_es;**;:  ;nº de mesas autorizadas en periodo estacional;;;;|;;;CHARACTER VARYING;|;YES
+**;55;.;mesas_ra;**;:  ;nº de mesas autorizadas resto del año;;;;|;;;CHARACTER VARYING;|;YES
+**;56;.;sillas_es;**;:  ;nº de sillas autorizadas en periodo estacional;;;;|;;;CHARACTER VARYING;|;YES
+**;57;.;sillas_ra;**;:  ;nº de sillas autorizadas resto del año;;;;|;;;CHARACTER VARYING;|;YES
